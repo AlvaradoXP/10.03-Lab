@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", domLoaded);
 
+//listens for the add button click and Enter key being pressed
 function domLoaded() {
     let addButton = document.getElementById("addButton");
     addButton.addEventListener("click", addBtnClick );
@@ -13,7 +14,7 @@ function domLoaded() {
     })
 }
 
-/*Gets user entered text and calls addTask to add it*/
+//Gets user entered text and calls addTask to add it if not empty
 function addBtnClick() {
 
     let tBox = document.getElementById("newTask");
@@ -23,12 +24,12 @@ function addBtnClick() {
         addTask(inputText);
     }
     
-
     tBox.value = "";
     tBox.focus();
     
 }
 
+//Creates a list inside an <ol> in the HTML with an X button
 function addTask(newTask) {
     let list = document.createElement("li");
     list.innerHTML = '<span class="task-text">' + newTask +
